@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>VueJS - Inverser du texte v0.1</title>
+
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-model="message" name="" value="">
+      <p>{{ message }}</p>
+      <button v-on:click="reverseMessage">Inverser le message</button>
+    </div>
+
+    <script type="text/javascript">
+      const EventHandling = {
+        data() {
+          return {
+            message: ''
+          }
+        },
+        methods: {
+          reverseMessage() {
+            this.message = this.message
+              .split('')
+              .reverse()
+              .join('')
+          }
+        }
+      }
+
+      Vue.createApp(EventHandling).mount('#app')
+    </script>
+  </body>
+</html>
