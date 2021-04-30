@@ -13,8 +13,24 @@
       input { padding: 10px 20px; font-weight: 100;}
       input:hover, input:focus { transition: .33s; border: solid 2px #eee; }
       p { font-weight: 500; font-size: 24px; text-align: center; display: flex; align-items: center; padding: 10px 20px; overflow: hidden;}
-      button { width: 70%; height: 80px; }
+      button { overflow: hidden; width: 70%; height: 80px; }
       button:hover { transition: .33s; border: solid 2px #eee; cursor: pointer; }
+      button::before {
+        background: #45a29e;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: -1;
+        transition: all 0.6s ease;
+        width: 120%;
+        height: 0%;
+        transform: translate(-50%, -50%) rotate(25deg);
+        opacity: 0;
+      }
+      button:hover::before { height: 300%; opacity: 1; }
+
     </style>
   </head>
   <body>
